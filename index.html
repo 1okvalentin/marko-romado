@@ -1,87 +1,158 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meine Website</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Markus Rühl — Die Präsentation</title>
+  <meta name="description" content="Kurzpräsentation über Markus Rühl — Biographie, Erfolge und Interessantes."/>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f7f7f7;
-      color: #333;
-      text-align: center;
+    :root{
+      --accent:#0b63d6;
+      --bg:#f4f6f8;
+      --card:#ffffff;
+      --muted:#666;
+      --maxw:1100px;
     }
-
-    header {
-      background-color: #0077ff;
-      color: white;
-      padding: 2rem 1rem;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Arial;
+      background:linear-gradient(180deg,#f7f9fb,var(--bg));
+      color:#111;
+      -webkit-font-smoothing:antialiased;
     }
-
-    h1 {
-      margin-bottom: 0.5rem;
+    .wrap{max-width:var(--maxw);margin:2rem auto;padding:1rem;}
+    header{
+      background:var(--card);
+      padding:1.6rem;
+      border-radius:12px;
+      box-shadow:0 8px 24px rgba(15,23,42,0.06);
+      display:flex;gap:1rem;align-items:center;
     }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      padding: 2rem;
-    }
-
-    .gallery img {
-      width: 300px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    .about {
-      padding: 2rem;
-      background: white;
-      margin: 1rem auto;
-      max-width: 800px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
+    .hero-img{width:160px;height:160px;border-radius:12px;object-fit:cover;flex-shrink:0}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{margin:0.2rem 0 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:1.25rem;margin-top:1.25rem}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 20px rgba(13,20,30,0.04)}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem}
+    .tag{background:var(--accent);color:white;padding:0.25rem 0.6rem;border-radius:999px;font-size:0.85rem}
+    .facts{display:flex;flex-direction:column;gap:0.45rem;font-size:0.95rem}
+    .facts b{width:140px;display:inline-block;color:#222}
+    ul.achievements{padding-left:1.15rem;margin:0}
+    .gallery{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center}
+    .gallery img{width:100%;max-width:240px;height:160px;object-fit:cover;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.06);transition:transform .25s ease}
+    .gallery img:hover{transform:translateY(-6px) scale(1.02)}
+    .slide-area{position:relative;overflow:hidden;border-radius:10px}
+    .slide-area img{width:100%;height:300px;object-fit:cover;display:block}
+    .controls{display:flex;gap:0.5rem}
+    footer{margin-top:1.25rem;text-align:center;color:var(--muted);font-size:0.9rem;padding:1rem}
+    .note{font-size:0.88rem;color:var(--muted);margin-top:0.6rem}
+    .stat-grid{display:flex;gap:0.6rem;flex-wrap:wrap}
+    .stat{flex:1;padding:0.65rem;background:#f7fbff;border-radius:8px;text-align:center}
+    .stat strong{display:block;font-size:1.15rem}
   </style>
 </head>
 <body>
-  <header>
-    <h1>Willkommen auf meiner Website 🌿</h1>
-    <p>Dies ist meine erste kostenlose Website!</p>
-  </header>
+  <div class="wrap">
+    <header>
+      <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/0/07/Markus_Ruehl_2005.jpg" alt="Markus Rühl" onerror="this.style.display='none'">
+      <div>
+        <h1>Markus Rühl — "The German Beast"</h1>
+        <p class="lead">Kurzpräsentation: Biographie, Karrierehöhepunkte und Kurioses.</p>
+        <div class="note">Quellen: Wikipedia (EN/DE), Generation Iron, GreatestPhysiques u. a.</div>
+      </div>
+    </header>
 
-  <section class="gallery">
-    <img src="https://source.unsplash.com/400x300/?nature" alt="Naturbild 1" />
-    <img src="https://source.unsplash.com/400x300/?city" alt="Stadtbild" />
-    <img src="https://source.unsplash.com/400x300/?mountain" alt="Bergbild" />
-  </section>
+    <div class="grid">
+      <!-- Hauptinhalt -->
+      <main>
+        <section class="card">
+          <div class="section-title">
+            <h2 style="margin:0">Kurzbiographie</h2>
+            <span class="tag">Bodybuilding</span>
+          </div>
+          <div style="line-height:1.6;">
+            <p><strong>Name:</strong> Markus Rühl — geboren am <strong>22. Februar 1972</strong> in Roßdorf (D). :contentReference[oaicite:2]{index=2}</p>
+            <p><strong>Überblick:</strong> Markus Rühl ist ein ehemaliger IFBB-Profi, bekannt als einer der größten „Mass Monster“ im modernen Bodybuilding. Er erlangte Berühmtheit durch seine enorme Muskelmasse, seine sympathische Art und mehrere Top-Platzierungen bei internationalen Wettkämpfen. :contentReference[oaicite:3]{index=3}</p>
+          </div>
+        </section>
 
-  <section class="about">
-    <h2>Über mich</h2>
-    <p>Ich bin begeistert davon, meine erste Website zu bauen. 😊  
-    Diese Seite ist komplett kostenlos und läuft mit GitHub Pages.</p>
-  </section>
+        <section class="card" style="margin-top:1rem">
+          <div class="section-title">
+            <h2 style="margin:0">Wettkampferfolge & Meilensteine</h2>
+            <span class="tag">Highlights</span>
+          </div>
+          <p class="note">Auswahl der wichtigsten Platzierungen (nicht vollständig):</p>
+          <ul class="achievements">
+            <li>Night of Champions — Sieger (2002). :contentReference[oaicite:4]{index=4}</li>
+            <li>Mr. Olympia — bestes Resultat: 5. Platz (2004). :contentReference[oaicite:5]{index=5}</li>
+            <li>Arnold Classic 2003 — 3. Platz. :contentReference[oaicite:6]{index=6}</li>
+            <li>Toronto Pro (2000) — Sieger; zahlreiche Top-Platzierungen bei Pro-Shows. :contentReference[oaicite:7]{index=7}</li>
+          </ul>
+        </section>
 
-  <footer>
-    <p>© 2025 Meine Website – Erstellt mit ❤️ und GitHub Pages</p>
-  </footer>
+        <section class="card" style="margin-top:1rem">
+          <div class="section-title">
+            <h2 style="margin:0">Kurioses & Medien</h2>
+            <span class="tag">Fun Facts</span>
+          </div>
+          <p>Markus ist nicht nur für seine Bühnenauftritte bekannt — er hat auch in Werbe- und Medienauftritten mitgewirkt und betreibt unter anderem eine Marke/Shop rund um Supplements und Merchandise (Rühl24 / Rühl’s Bestes). :contentReference[oaicite:8]{index=8}</p>
+          <p class="note">Er zog sich mehrfach zurück und versuchte Comebacks; seine Karriere ist durch starke Phasen (Mass-Aufbau) und mediale Präsenz geprägt. :contentReference[oaicite:9]{index=9}</p>
+        </section>
+
+        <section class="card" style="margin-top:1rem">
+          <div class="section-title">
+            <h2 style="margin:0">Schnelle Fakten</h2>
+            <span class="tag">Stats</span>
+          </div>
+          <div class="stat-grid" style="margin-top:0.6rem">
+            <div class="stat"><strong>Geburt</strong>22.02.1972</div>
+            <div class="stat"><strong>Bühnengewicht</strong>ca. 120–132 kg</div>
+            <div class="stat"><strong>Off-Season</strong>ca. 140–148 kg</div>
+            <div class="stat"><strong>Profijahre</strong>1995–2011 (aktive Zeit, mit Comebackversuchen).</div>
+          </div>
+          <div class="note" style="margin-top:0.6rem">Zahlen & Jahresangaben aus öffentlichen Quellen (siehe Referenzen). :contentReference[oaicite:10]{index=10}</div>
+        </section>
+
+      </main>
+
+      <!-- rechte Spalte -->
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Galerie</h3>
+          <div class="gallery">
+            <!-- Ersetze die URLs unten durch direkte Bild-URLs oder Pfade zu Bildern in deinem Repo -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Markus_Ruehl_2005.jpg" alt="Markus Rühl Pose 1" onerror="this.src='https://via.placeholder.com/400x300?text=Bild+1'">
+            <img src="https://cdn.greatestphysiques.com/wp-content/uploads/2017/03/markus-ruhl.jpg" alt="Markus Rühl Pose 2" onerror="this.src='https://via.placeholder.com/400x300?text=Bild+2'">
+            <img src="https://assets.gannikus.de/wp-content/uploads/2022/01/markus-ruhl.jpg" alt="Markus Rühl Fun" onerror="this.src='https://via.placeholder.com/400x300?text=Bild+3'">
+          </div>
+          <div class="note">Bilder: öffentl. Quellen / Medieneinträge. Du kannst hier eigene Bilder hochladen und die Pfade anpassen.</div>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <h3 style="margin-top:0">Kurz zum Ablauf</h3>
+          <p style="margin:0.35rem 0">Wenn du diese Datei in dein GitHub-Repo in den root hochlädst (Name: <code>index.html</code>) und GitHub Pages für den Branch <code>main</code> aktivierst, ist die Seite öffentlich erreichbar.</p>
+          <div style="margin-top:0.6rem" class="controls">
+            <button onclick="copySite()" style="background:var(--accent);color:#fff;border:0;padding:0.5rem 0.8rem;border-radius:8px;cursor:pointer">Code kopieren</button>
+            <a href="https://github.com" target="_blank" style="text-decoration:none;padding:0.5rem 0.8rem;border-radius:8px;border:1px solid #ddd">Öffne GitHub</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div>Quellen & Referenzen: Wikipedia (EN/DE), Generation Iron, GreatestPhysiques, Artikel & Social Media.</div>
+      <div style="margin-top:0.6rem">© Finale Präsentation — erstellt automatisch. Ersetze Bilder/Pfade nach Wunsch.</div>
+    </footer>
+  </div>
+
+  <script>
+    function copySite(){
+      const code = `index.html`;
+      // Hinweis: für Sicherheit kann der Browser kein komplettes Dateisystem schreiben.
+      alert("Kopiere den gesamten HTML-Code aus dieser Datei (öffne View->Page Source oder kopiere aus dem Editor).\\nSpeichere als index.html und lade in dein GitHub Repo hoch.");
+    }
+  </script>
 </body>
 </html>
